@@ -1,21 +1,22 @@
 let amigos = [];
 
-function adicionarAmigo() { // ajuste 1
+function adicionarAmigo() {
   let inputAmigo = document.getElementById("amigo");
-  let nomeAmigo = inputAmigo.value;
+  let nomeAmigo = inputAmigo.value.trim();
 
   if (!nomeAmigo) {
     alert("Digite o nome do amigo");
     return;
   }
+
   amigos.push(nomeAmigo);
   inputAmigo.value = "";
-  inputAmigo.focus(); // ajuste 2
+  inputAmigo.focus();
   atualizarlista();
 }
 
 function atualizarlista() {
-  let listaAmigos = document.getElementById("listaAmigos"); //ajuste 3
+  let listaAmigos = document.getElementById("listaAmigos");
   listaAmigos.innerHTML = "";
 
   for (let i = 0; i < amigos.length; i++) {
@@ -27,25 +28,25 @@ function atualizarlista() {
 
 function sortearAmigo() {
   if (amigos.length === 0) {
-    alert("nenhum amigo adicionado");
+    alert("Nenhum amigo adicionado");
     return;
   }
+
   let sorteado = amigos[Math.floor(Math.random() * amigos.length)];
   let resultado = document.getElementById("resultado");
-  resultado.innerHTML = `O amigo sorteado foi: ${sorteado}`; //ajuste 4
+  resultado.innerHTML = `O amigo sorteado foi: ${sorteado}`;
 
-  let limparLista = document.getElementById("listaAmigos");  //ajuste 5
-  limparlista.innerHTML = "";
+  let limparLista = document.getElementById("listaAmigos");
+  limparLista.innerHTML = "";  // Corrigido: usar a variável correta
 }
 
-
-//
-
-resetarSorteio();
-function resetarSorteio(){
-    let resultado=document.getElementById("resultado");
-    resultado.textContent="";
-    amigos=[];
-    atualizarListaAmigos();
-    alert("Novo sorteio!");
+function resetarSorteio() {
+  let resultado = document.getElementById("resultado");
+  resultado.textContent = "";
+  amigos = [];
+  atualizarlista();  // Corrigido: chamada da função correta
+  alert("Novo sorteio!");
 }
+
+// Adiciona evento ao botão resetar
+document.getElementById("botaoResetar").addEventListener("click", resetarSorteio);
