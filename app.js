@@ -37,12 +37,14 @@ function sortearAmigo() {
   resultado.innerHTML = `O amigo sorteado foi: ${sorteado}`;
 
   let limparLista = document.getElementById("listaAmigos");
-  limparLista.innerHTML = "";  // Corrigido: usar a variável correta
+  limparLista.innerHTML = "";
 }
 
+// Para resetar o sorteio
+
 function resetarSorteio() {
-    amigos = []; // Esvazia o array de nomes
-    document.getElementById("listaAmigos").innerHTML = ""; // Limpa a lista na tela
-    document.getElementById("resultado").innerHTML = ""; // Limpa o resultado do sorteio
+    amigos = [];
+    document.getElementById("listaAmigos").innerHTML = "";
+    document.getElementById("resultado").innerHTML = "";
     alert("Novo sorteio!");
 }
