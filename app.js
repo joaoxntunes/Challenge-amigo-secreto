@@ -41,12 +41,8 @@ function sortearAmigo() {
 }
 
 function resetarSorteio() {
-  let resultado = document.getElementById("resultado");
-  resultado.textContent = "";
-  amigos = [];
-  atualizarlista();  // Corrigido: chamada da função correta
-  alert("Novo sorteio!");
+    amigos = []; // Esvazia o array de nomes
+    document.getElementById("listaAmigos").innerHTML = ""; // Limpa a lista na tela
+    document.getElementById("resultado").innerHTML = ""; // Limpa o resultado do sorteio
+    alert("Novo sorteio!");
 }
-
-// Adiciona evento ao botão resetar
-document.getElementById("botaoResetar").addEventListener("click", resetarSorteio);
