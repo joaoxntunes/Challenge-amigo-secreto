@@ -39,3 +39,18 @@ function sortearAmigo() {
     let limparLista = document.getElementById("listaAmigos");
     limparLista.innerHTML = "";
 }
+
+
+
+//
+
+function resetarSorteio(set){
+    
+    let divReiniciar = document.getElementById('Resetar');
+    
+    if(set =='sim'){
+        divReiniciar.hidden = false;
+    }else{
+        divReiniciar.hidden = true;
+    }
+}
