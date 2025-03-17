@@ -46,5 +46,5 @@ function resetarSorteio() {
     amigos = [];
     document.getElementById("listaAmigos").innerHTML = "";
     document.getElementById("resultado").innerHTML = "";
-    alert("Novo sorteio!");
+    alert("Resetado!");
 }
