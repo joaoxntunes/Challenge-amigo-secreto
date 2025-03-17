@@ -37,3 +37,15 @@ function sortearAmigo() {
   let limparLista = document.getElementById("listaAmigos");  //ajuste 5
   limparlista.innerHTML = "";
 }
+
+
+//
+
+resetarSorteio();
+function resetarSorteio(){
+    let resultado=document.getElementById("resultado");
+    resultado.textContent="";
+    amigos=[];
+    atualizarListaAmigos();
+    alert("Novo sorteio!");
+}
